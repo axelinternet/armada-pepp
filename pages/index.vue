@@ -2,12 +2,9 @@
   <section class="container">
     <div>
       <logo/>
-      <h1 class="title">
-        armada-pepp
-      </h1>
-      <h2 class="subtitle">
-        {{ quote }}
-      </h2>
+      <p class="subtitle">
+        {{ randomQuote }}
+      </p>
     </div>
   </section>
 </template>
@@ -21,7 +18,14 @@ export default {
   },
   data: function () {
     return {
-      quote: 'hejsan'
+      quotes: [`Snart är vi i land`,
+        `Hamna inte snett nu`,
+        `Vi kommer ro hem det här`]
+    }
+  },
+  computed: {
+    randomQuote: function () {
+      return this.quotes[Math.floor(Math.random() * this.quotes.length)]
     }
   }
 }
@@ -46,11 +50,17 @@ export default {
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24pt;
+  font-family: "Lato", sans-serif;
+  color: #4d4d4c;
   word-spacing: 5px;
-  padding-bottom: 15px;
+  padding: 15px 0px;
+  background-color: #fff;
+  margin: 30px 0px;
+  padding: 15px 15px;
+  max-width: 90vw;
 }
 
 .links {

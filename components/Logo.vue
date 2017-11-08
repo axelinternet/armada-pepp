@@ -6,17 +6,16 @@
 
 <style>
 .ArmadaLogoHolder {
-  display: inline-block;
+  display: flex;
   position: relative;
-  height: 180px;
-  width: 245px;
 }
-
 
 .mainLogo {
-  height: auto;
-  width: inherit;
+  height: 245px;
+  width: auto;
+  margin: auto;
 }
+
 @keyframes turn {
   100% {
     transform: rotateX(0deg);
